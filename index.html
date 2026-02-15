@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sovereign Finance 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif']
+            },
+            colors: {
+              ios: {
+                bg: '#000000',
+                card: 'rgba(15, 15, 20, 0.6)',
+                cardBorder: 'rgba(255, 255, 255, 0.08)',
+                primary: '#0A84FF',
+                success: '#30D158',
+                danger: '#FF453A',
+                warning: '#FFD60A',
+                text: '#FFFFFF',
+                textSec: '#8E8E93'
+              }
+            },
+            backdropBlur: {
+              '4xl': '100px',
+              '5xl': '150px'
+            },
+            animation: {
+              'mesh': 'mesh 8s ease infinite',
+              'shimmer': 'shimmer 1.5s linear infinite',
+              'float-slow': 'float 12s ease-in-out infinite',
+              'spin-slow': 'spin 20s linear infinite',
+            },
+            keyframes: {
+              mesh: {
+                '0%, 100%': { 'background-position': '0% 50%' },
+                '50%': { 'background-position': '100% 50%' },
+              },
+              shimmer: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(100%)' }
+              },
+              float: {
+                '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+                '33%': { transform: 'translate(40px, -60px) scale(1.05)' },
+                '66%': { transform: 'translate(-30px, 30px) scale(0.95)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #000000;
+        color: #FFFFFF;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        letter-spacing: -0.02em;
+      }
+      
+      .liquid-bg {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: -1;
+        background: radial-gradient(circle at 50% 50%, #08080a 0%, #000 100%);
+      }
+
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(100px);
+        opacity: 0.12;
+        pointer-events: none;
+        mix-blend-mode: screen;
+      }
+
+      .mesmerize-btn {
+        background: linear-gradient(-45deg, #0A84FF, #5E5CE6, #0A84FF, #30D158);
+        background-size: 400% 400%;
+        animation: mesh 6s ease infinite;
+      }
+
+      .glass-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+        backdrop-filter: blur(80px);
+        -webkit-backdrop-filter: blur(80px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .ios-gradient-text {
+        background: linear-gradient(135deg, #fff 30%, rgba(255,255,255,0.4) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.564.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div class="liquid-bg">
+       <div class="orb w-[800px] h-[800px] bg-blue-600 top-[-300px] left-[-200px] animate-float-slow"></div>
+       <div class="orb w-[700px] h-[700px] bg-indigo-900 bottom-[-200px] right-[-200px] animate-float-slow" style="animation-delay: -4s"></div>
+       <div class="orb w-[400px] h-[400px] bg-ios-primary/20 top-[40%] left-[30%] animate-pulse"></div>
+    </div>
+    <div id="root"></div>
+  </body>
+</html>
